@@ -52,6 +52,11 @@ Route::post('/register', [
 	'as' 	=> '/',
 ]);
 
+Route::get('question/select', [
+	'uses' 	=> 'PagesController@selectQuestion',
+	'as' 	=> '/',
+]);
+
 
 
 // Route::get('/auth/{provider}', 'OauthController@getSocialLogin');

@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
 
-
 	public function authPage()
 	{
 		return view('pages.auth');
@@ -21,7 +20,18 @@ class PagesController extends Controller
 
 	public function getUsers()
 	{
-		return view('pages.users');
+		if (Auth::user()->profile_status == 0) 
+		{
+			return redirect('profile');
+		}
+
+		if (Auth::user()->question_status == 0) 
+		{
+			return redirect('question/select');
+		}
+
+		$users = User::all()->take(10);
+		return view('pages.users', compact('users'));
 	}
 
 	public function getUpdateProfile()
@@ -40,6 +50,7 @@ class PagesController extends Controller
 		$user->about 		= $request->about;
 		$user->location 	= $request->location;
 		$user->username 	= $request->username;
+		$user->profile_status 	= 1;
 
 		$user->save();
 		Session::flash('profile-updated', 'good');
@@ -109,6 +120,11 @@ class PagesController extends Controller
 
 
 		return $request->all();
+	}
+
+	public function selectQuestion()
+	{
+		return view('pages.question_select');
 	}
     
 }

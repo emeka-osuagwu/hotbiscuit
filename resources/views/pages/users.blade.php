@@ -16,6 +16,7 @@
           </div>
       </div>
     </div>
+
     <div class="categories-navigation">
       <h2>Play With</h2>
       <div class="category-holder">
@@ -24,44 +25,22 @@
         <div class="females-category-navigation category"><a class="btn button button-females" href="female-users-page.html">Girls</a></div>  
       </div>
       </div>
-    <div class="card users-players-card col-lg-4">
-      <div class="user-profile-holder center">
-          <div class="user-profile-img male-user-profile"><img src="images/girl picture.png"></div>
-          <div class="user-profile-info">
-            <div class="username-holder"><h3>Vikkiebelle</h3></div>
-            <div class="description-holder"><strong>I Like Humans!</strong></div>
-            <div class="age-holder">25 Years Old</div>
-            <div class="location-holder">Surulere</div>
+      
+      @foreach($users->except(Auth::user()->id) as $user)
+        <div class="card users-players-card col-lg-4">
+          <div class="user-profile-holder center">
+              <div class="user-profile-img male-user-profile"><img src="{{ $user->image }}"></div>
+              <div class="user-profile-info">
+                <div class="username-holder"><h3>{{ $user->username }}</h3></div>
+                <div class="description-holder"><strong>{{ $user->about }}</strong></div>
+                <div class="age-holder">{{ $user->age }} Years Old</div>
+                <div class="location-holder">{{ $user->location }}</div>
+              </div>
           </div>
-      </div>
-      <button class="play-button play-button-males">PLAY</button>
-    </div>
-
-    <div class="card users-players-card col-lg-4">
-      <div class="user-profile-holder center">
-          <div class="user-profile-img male-user-profile"><img src="images/girl-2-pictures.png"></div>
-          <div class="user-profile-info">
-            <div class="username-holder"><h3>Cynthia</h3></div>
-            <div class="description-holder"><strong>Beta Ibo chic</strong></div>
-            <div class="age-holder">22 Years Old</div>
-            <div class="location-holder">Ijora</div>
-          </div>
-      </div>
-      <button class="play-button play-button-males">PLAY</button>
-    </div>
-
-    <div class="card users-players-card col-lg-4 last">
-      <div class="user-profile-holder center">
-          <div class="user-profile-img male-user-profile"><img src="images/girl-3-picture.png"></div>
-          <div class="user-profile-info">
-            <div class="username-holder"><h3>Tolani</h3></div>
-            <div class="description-holder"><strong>Good Girl</strong></div>
-            <div class="age-holder">22 Years Old</div>
-            <div class="location-holder">Lagos Island</div>
-          </div>
-      </div>
-      <button class="play-button play-button-males">PLAY</button>
-    </div>
+          <a href="{{ Url('play/' . $user->id ) }}" class="play-button play-button-males">PLAY</a>
+        </div>
+      @endforeach
+  
   </section>
 
 @endsection

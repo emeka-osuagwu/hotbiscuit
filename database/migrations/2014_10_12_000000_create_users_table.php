@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->integer('age')->nullable();
             
             $table->integer('profile_status')->default(0);
+            $table->integer('question_status')->default(0);
             
             $table->rememberToken();
             $table->timestamps();
