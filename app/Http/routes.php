@@ -15,3 +15,5 @@ Route::get('/', [
 	'uses' 	=> 'PagesController@authPage',
 	'as' 	=> '/',
 ]);
+
+Route::get('/auth/{provider}', 'OauthController@getSocialLogin');
