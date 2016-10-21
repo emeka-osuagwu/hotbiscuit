@@ -1,0 +1,406 @@
+/*---- General Styles ----*/
+
+body{
+	width: 100%;
+	margin: 0px;
+	font-family: 'Raleway', sans-serif;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+img{
+	max-height: 100%;
+	max-width: 100%;
+}
+div{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;	
+}
+.container{
+	width: 100%;
+	padding: 0px;
+}
+.center{
+	margin-left: auto;
+	margin-right: auto;
+}
+.card{
+	border-radius: 6px;
+	background-color: rgb(250, 250, 250);
+	box-shadow: 4px 6px 6px rgba(10,10,10,0.3);
+	padding-bottom: 60px;
+}
+/*---- Main Navigation ----*/
+#main-navigation{
+	height: 70px;
+	box-shadow: 2px 2px 3px rgba(10,10,10,0.2);
+	background-color: rgb(253, 253,253);
+}
+#main-navigation .navbar-brand{
+	width: 70px;
+	height: 70px;
+	padding: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin: 0px;
+	margin-left: 30px;
+}
+#nav-menu-holder{
+	height: 100px;
+	float: right;
+	padding-top: 10px;
+	margin-right: 20px;
+	width: 150px;
+	cursor: pointer;
+}
+.modal-menu-holder.active{
+	position: fixed;
+	z-index: 9999;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	transition: 1s all ease-in;
+}
+.modal-menu-holder.hide-modal{
+	position: fixed;
+	z-index: 9997;
+	top: 0;
+	overflow: hidden;
+	display: none;
+	left: 0;
+	width: 0%;
+	transition: 1s all ease-in;
+}
+.modal-menu-holder.hide-modal .modal-menu{
+	width: 0;
+	transition: 1s all ease-in;
+}
+.modal-left{
+	width: 100%;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	z-index: 9998;
+	height: 100%;
+}
+.modal-menu-holder.active .modal-menu{
+	width: 350px;
+	height: 100%;
+	position: relative;
+	z-index: 9999;
+	background-color: rgb(250, 250, 250);
+	transition: 1s all ease-in;
+
+}
+.modal-menu .logo-holder{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.menu-links ul{
+	margin-top: 30px;
+	list-style: none;
+	padding: 0px;
+}
+.menu-links ul li{
+	width: 100%;
+	text-align: center;
+	height: 35px;
+	padding-top: 5px;
+}
+/*---- Section-1 ----*/
+.section-1{
+	min-height: 100vh;
+	height: auto;
+	background-image: url('../images/landing-page-red-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding-top: 75px;
+	padding-bottom: 40px;
+	overflow: hidden;
+	box-shadow: 2px 4px 4px rgba(10,10,10,0.3);
+}
+.section-1__content, .registration-section-1_content{
+	height: 100%;
+}
+.section-1__content .logo-holder, .registration-section-1__content .logo-holder{
+	width: 250px;
+	margin-top: 20px;
+}
+.section-1__content__card, .registration-section-1__content__card{
+	height: auto;
+	width: 40%;
+	margin-top: 30px;
+	overflow: hidden;
+}
+.section-1__content__card__image-holder, .registration-section-1__content__card__image-holder,
+.test-card-section-1__content__card__image-holder{
+	background-image: url('../images/card-image.jpg');
+	height: 200px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.registration-section-1__content__card__image-holder{
+	background-image: url('../images/yellow-card-image.jpg');
+}
+.test-card{
+	background-color: rgba(245, 245, 245, 1);
+	/* position: absolute;
+	top: 10px;
+	left: auto;
+	right: auto; */
+}
+.test-card-section-1__content__card__image-holder{
+	background-image: url('../images/red-card-image.jpg');
+	height: 150px;
+}
+.test-card .question-count{
+	font-weight: 700;
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 1px 3px 3px rgba(10,10,10,0.3);
+	padding-top: 60px;
+}
+.test-card .question-holder{
+	box-shadow: 2px 2px 2px rgba(10,10,10,0.15);
+	margin-top: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	border-radius: 4px;
+	background-color: rgb(250, 250, 250);
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.test-card .question-holder h3, span{
+	width: 100%;
+	display: block;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.test-card .button-select{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40px;
+	margin-top: 40px;
+	text-align: center;
+}
+.test-card .button-select button{
+	height: 100%;
+	display: block;
+	width: 50%;
+	float: left;
+	font-weight: 700;
+	color: #f9f9f9;
+	box-shadow: 2px 2px 2px rgba(10,10,10,0.15);
+	border-radius: 0px;
+}
+.test-card .button-select .option-a{
+	background-color: #a0252c;
+}
+.test-card .button-select .option-b{
+	background-color: #294176;
+}
+.section-1__content__card__main-copy, .registration-section-1__content__card__main-copy{
+	font-family: 'Grand Hotel', cursive;
+	text-align: center;
+	margin-top: 36px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+.registration-section-1__content__card__form-holder{
+	margin-top: 40px;
+	padding: 20px;
+}
+.registration-section-1__content__card__form-holder div{
+	margin-bottom: 20px;
+}
+.registration-section-1__content__card__form-holder input{
+	width: 100%;
+	border: none;
+	background-color: rgba(0,0,0,0);
+	border-bottom: 20px;
+	border-bottom: 2px solid rgba(30, 30, 30, 0.7);
+	height: 30px;
+}
+.registration-section-1__content__card__form-holder button{
+	width: 100%;
+	color: rgba(30, 30, 30, 0.7);
+	border-radius: 0px;
+	border: 2px solid ;
+	background-color: rgba(0,0,0,0);
+}
+.section-1__content__card__main-copy h2, .registration-section-1__content__card__main-copy h2{
+	font-size: 42px;
+}
+.section-1__content__card__signin-buttons{
+	margin-top: 60px;
+}
+.section-1__content__card__signin-buttons span{
+	text-align: center;
+	width: 100%;
+	font-weight: 600;
+	display: block;	
+	margin-bottom: 10px;
+}
+.section-1__content__card__signin-buttons .signin-button{
+	width: 80%;
+	height: 45px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.section-1__content__card__signin-buttons .signin-button img:hover{
+	cursor: pointer;
+}
+.test-section-1, .users-section-1{
+	background-color: rgba(200, 200, 200, 0.5);
+	background-image: url();
+}
+ .users-section-1{
+ 	padding-left: 7%;
+ 	padding-right: 7%;
+ 	padding-bottom: 70px;
+ }
+
+.users-section-1 .card{
+	border-radius: 0px;
+	margin-top: 30px;
+	box-shadow: 1px 1px 5px rgba(30, 30, 30, 0.15);
+	overflow: hidden;
+	height: auto;
+	padding: 0px;
+}
+.users-profile-card .user-profile-holder{
+	width: 80%;	
+	padding: 30px;
+	overflow: hidden;
+}
+.users-profile-card  .user-profile-img{
+	width: 150px;
+	height: 150px;
+	float: left;
+}
+.users-profile-card  .user-profile-info{
+	float: left;
+	padding: 10px;
+	padding-left: 30px;
+}
+.users-profile-card  .user-profile-info div{
+	
+}
+.users-profile-card  .user-profile-info .username-holder{
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.users-profile-card  .user-profile-info .description-holder{
+	margin-bottom: 10px;
+}
+.categories-navigation{
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+.categories-navigation .category-holder{
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	text-align: center;
+	padding-left: 22px;
+	padding-right: 22px;
+	overflow: hidden;
+}
+.categories-navigation .category{
+	width: 200px;
+	float: left;
+}
+.categories-navigation h2{
+	margin-bottom: 20px;
+}
+.categories-navigation p{
+	margin-top: 10px;
+	width: 50px;
+	float: left;
+}
+.categories-navigation .button{
+	border-radius: 0px;
+	width: 200px;
+	border: 2px solid;
+	background-color: rgba(0,0,0,0);
+	color: rgba(80, 80, 80, 0.8);
+}
+.categories-navigation .button-females.active{
+	background-color: rgb(175, 45, 53);
+	color: #f9f9f9;
+	border: 2px solid rgb(175, 45, 53);
+}
+.categories-navigation .button-males.active{
+	background-color: #1b2437;
+	color: #f9f9f9;
+	border: 2px solid #1b2437;
+}
+.users-players-card{
+	width: 30%;
+	margin-right: 5%;
+	position: relative; 
+}
+.users-players-card.last{
+	margin-right: 0px;
+}
+.users-players-card .user-profile-holder{
+}
+.users-players-card .user-profile-img{
+	width: 100%;
+	height: 150px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.users-players-card .female-user-profile{
+	background-image: url('../images/red-card-image.jpg');
+}
+.users-players-card .male-user-profile{
+	background-image: url('../images/blue-card-image.jpg');
+}
+.users-players-card .user-profile-img img{
+	margin-top: 65px;
+	filter: drop-shadow(2px 4px 3px rgba(50, 50, 50, 0.4));
+}
+.users-players-card .user-profile-info{
+	margin-top: 60px;
+	text-align: center;
+	padding: 20px;
+	padding-bottom: 110px;
+}
+.users-players-card  .play-button{
+	width: 100%;
+	height: 70px;
+	position: absolute;
+	bottom: 0;
+	border: none;
+	color: #ffffff;
+	font-weight: 700;
+	box-shadow: 1px 2px 3px rgba(30, 30, 30, 0.2);
+}
+.play-button-females{
+	background-color: rgb(175, 45, 53);
+}
+.play-button-males{
+	background-color: #1b2437;
+}
+/*--- FOOTER ---*/
+.footer{
+	height: 100px;
+	width: 100%;
+	float: left;
+	background-color: rgb(50, 50, 50);
+}

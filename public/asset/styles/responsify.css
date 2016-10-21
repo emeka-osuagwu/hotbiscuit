@@ -1,0 +1,35 @@
+@media (max-width: 1200px){
+	.card{
+		width: 85%;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		margin-bottom: 50px;
+	}
+
+	.users-profile-card .user-profile-holder .user-profile-img{
+		width: 100%;
+		height: 200px;
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	
+	.users-profile-card  .user-profile-info{
+		width: 100%;
+		text-align: center;
+	}	
+
+	.categories-navigation .category-holder{
+		width: 100%;
+		height: auto;
+	}
+	.categories-navigation .category-holder .category{
+		width: 100%;
+	}
+
+   .categories-navigation p{
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+}
