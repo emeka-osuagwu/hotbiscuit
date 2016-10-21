@@ -46,25 +46,30 @@ class OauthController extends Controller
             $authUser               = new User;
             $authUser->username     = ($user->name) ? $user->name : $user->nickname;
             $authUser->email        = ($user->email)? $user->email: "";
+            $authUser->password     = $user->id;
             $authUser->oauth        = $user->id;
             $authUser->avatar       = $user->avatar;
             $authUser->save();
             $this->auth_user($user);
-            return redirect('welcome');
+            return redirect('profile');
         }
     }
 
-    public function auth_user($oauth_user)
-    {
-        Auth::attempt(['email' => $oauth_user->email, 'password' => $oauth_user->id]);
-    }
-
-    // public function auth_user(Request $oauth_user)
+    // public function auth_user($oauth_user)
     // {
-    //     Auth::attempt(['email' => $oauth_user['email'], 'password' => $oauth_user['id']]);
-    //     return redirect('user');
-    //     // http://connect.dev/magic_login?email=fagemaki.iniruto@yahoo.com&id=1075950732481300
+    	
+        
+    //     if (Auth::attempt(['email' => $oauth_user['email'], 'password' => $oauth_user->id])) {
+    //     	dd(1);
+    //     }
     // }
+
+    public function auth_user( $oauth_user)
+    {
+        Auth::attempt(['email' => $oauth_user['email'], 'password' => $oauth_user['id']]);
+        return redirect('user');
+        // http://connect.dev/magic_login?email=fagemaki.iniruto@yahoo.com&id=1075950732481300
+    }
 
 }
 

@@ -16,4 +16,39 @@ Route::get('/', [
 	'as' 	=> '/',
 ]);
 
-Route::get('/auth/{provider}', 'OauthController@getSocialLogin');
+Route::get('/profile', [
+	'uses' 	=> 'PagesController@getUpdateProfile',
+	'as' 	=> '/',
+]);
+
+Route::get('/login', [
+	'uses' 	=> 'PagesController@getLogin',
+	'as' 	=> '/',
+]);
+
+Route::post('/login', [
+	'uses' 	=> 'PagesController@postLogin',
+	'as' 	=> '/',
+]);
+
+Route::get('/register', [
+	'uses' 	=> 'PagesController@getRegister',
+	'as' 	=> '/',
+]);
+
+Route::post('/register', [
+	'uses' 	=> 'PagesController@postRegister',
+	'as' 	=> '/',
+]);
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/auth/{provider}', 'OauthController@getSocialLogin');

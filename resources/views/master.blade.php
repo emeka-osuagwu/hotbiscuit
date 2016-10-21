@@ -11,6 +11,9 @@
         <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Petit+Formal+Script|Raleway" rel="stylesheet">
         <script type="text/javascript" src="{!! load_asset('asset/scripts/bootstrap.min.js') !!}"></script>   
         <script type="text/javascript" src="{!! load_asset('asset/scripts/index.js') !!}"></script>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     </head>
 
     <body>
