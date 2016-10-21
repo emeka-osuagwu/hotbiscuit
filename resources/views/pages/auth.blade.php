@@ -4,9 +4,6 @@
 
 	@include('pages.sections.header')
     
-    <script>
-      swal("Good job!", "You clicked the button!", "success")
-    </script>
     <section class="col-lg-12 section-1 container" id="home-container">
       <div class="section-1__content col-lg-12">
         <div class="center logo-holder"><img src="{{ asset('asset/images/hot-biscuit-logo.png') }}"></div>

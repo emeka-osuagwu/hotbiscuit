@@ -24,6 +24,22 @@ class PagesController extends Controller
 		return view('pages.update_profile');
 	}
 
+	public function postUpdateProfile(Request $request)
+	{
+		$user = User::find(Auth::user()->id);
+
+		$user->sex 			= $request->sex;
+		$user->age 			= $request->age;
+		$user->email 		= $request->email;
+		$user->phone 		= $request->phone;
+		$user->location 	= $request->location;
+		$user->username 	= $request->username;
+
+		$user->save();
+		Session::flash('profile-updated', 'good');
+		return redirect('profile');
+	}
+
 	public function getLogin()
 	{
 		return view('pages.login');

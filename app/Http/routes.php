@@ -12,12 +12,17 @@
 */
 
 Route::get('/', [
-	'uses' 	=> 'PagesController@authPage',
+	'uses' 	=> 'PagesController@getUpdateProfile',
 	'as' 	=> '/',
 ]);
 
 Route::get('/profile', [
 	'uses' 	=> 'PagesController@getUpdateProfile',
+	'as' 	=> '/',
+]);
+
+Route::post('/profile/update', [
+	'uses' 	=> 'PagesController@postUpdateProfile',
 	'as' 	=> '/',
 ]);
 
