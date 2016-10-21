@@ -12,7 +12,7 @@
 */
 
 Route::get('/', [
-	'uses' 	=> 'PagesController@getUpdateProfile',
+	'uses' 	=> 'PagesController@getUsers',
 	'as' 	=> '/',
 ]);
 

@@ -19,6 +19,11 @@ class PagesController extends Controller
 		return view('pages.auth');
 	}
 
+	public function getUsers()
+	{
+		return view('pages.users');
+	}
+
 	public function getUpdateProfile()
 	{
 		return view('pages.update_profile');
@@ -32,6 +37,7 @@ class PagesController extends Controller
 		$user->age 			= $request->age;
 		$user->email 		= $request->email;
 		$user->phone 		= $request->phone;
+		$user->about 		= $request->about;
 		$user->location 	= $request->location;
 		$user->username 	= $request->username;
 

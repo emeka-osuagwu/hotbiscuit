@@ -69,6 +69,10 @@
               </div>
               
               <div class="col-lg-12">
+                <input type="text"  name="about"  value="{{ Auth::user()->about }}" placeholder="About" />
+              </div>
+              
+              <div class="col-lg-12">
                 <button type="submit" class="btn btn-success">Update</button>
               </div>
             
