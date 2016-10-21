@@ -25,6 +25,27 @@
               </div>
           @endif
 
+
+              @if (Session::has('register-sucsses'))
+                        <script>
+                  swal({
+                    title: "Account Created :)",
+                    type: "success",
+                    confirmButtonColor: "#298829",
+                    confirmButtonText: "OK",
+
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                  },
+                  function(isConfirm)
+                  {
+                    if (isConfirm) {
+                        window.location="/login";
+                      }
+                  });
+                </script>
+              @endif  
+
           <div class="registration-section-1__content__card__form-holder">
             
             <div class="col-lg-12 ">

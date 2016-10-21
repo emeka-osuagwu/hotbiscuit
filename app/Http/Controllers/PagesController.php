@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Auth;
+use Session;
 use App\User;
 use Validator;
 use App\Http\Requests;
@@ -11,6 +12,8 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+
+
 	public function authPage()
 	{
 		return view('pages.auth');
@@ -40,11 +43,13 @@ class PagesController extends Controller
 		}
 
 		if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-		 	return redirect('/');
+		 	Session::flash('login-sucsses', 'good');
+		 	return redirect('login');
 		}
 		else
 		{
-			return "bad";
+			Session::flash('login-faild', 'good');
+		 	return redirect('login');
 		}
 	}
 
@@ -74,7 +79,9 @@ class PagesController extends Controller
 
 			User::create($create);
 
-			return redirect('login');
+			Session::flash('register-sucsses', 'good');
+
+			return redirect('register');
 		}
 
 

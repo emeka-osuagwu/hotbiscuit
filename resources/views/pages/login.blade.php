@@ -25,6 +25,35 @@
               </div>
           @endif
 
+
+
+          @if (Session::has('login-faild'))
+            <script>
+              swal("Opps!", "Invalid Email or Password !", "error")
+            </script>
+          @endif 
+
+          @if (Session::has('login-sucsses'))
+            <script>
+              swal({
+                title: "Welcome :)",
+                type: "success",
+                confirmButtonColor: "#298829",
+                confirmButtonText: "OK",
+
+                closeOnConfirm: false,
+                closeOnCancel: false
+              },
+              function(isConfirm)
+              {
+                if (isConfirm) {
+                    window.location="/";
+                  }
+              });
+            </script>
+          @endif  
+
+
           <div class="registration-section-1__content__card__form-holder">
             
             <div class="col-lg-12 ">

@@ -21,6 +21,12 @@ Route::get('/profile', [
 	'as' 	=> '/',
 ]);
 
+Route::get('logout', function () {
+	Auth::logout();
+	return redirect('login');
+});
+
+
 Route::get('/login', [
 	'uses' 	=> 'PagesController@getLogin',
 	'as' 	=> '/',
@@ -40,14 +46,6 @@ Route::post('/register', [
 	'uses' 	=> 'PagesController@postRegister',
 	'as' 	=> '/',
 ]);
-
-
-
-
-
-
-
-
 
 
 
