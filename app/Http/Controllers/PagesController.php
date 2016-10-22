@@ -192,6 +192,15 @@ class PagesController extends Controller
 
 	public function postPlay(Request $request)
 	{
+		$played = [
+			"answer" 		=> $request['answer'],
+			"against" 		=> (int) $request['player_id'],
+			"player_id" 	=> Auth::user()->id,
+			"question_id" 	=> (int) $request['question_id'],
+		];
+		
+		return $played;
+
 		return $request->all();
 	}
     
