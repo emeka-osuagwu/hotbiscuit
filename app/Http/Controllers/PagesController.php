@@ -177,5 +177,22 @@ class PagesController extends Controller
 		$user->question_status = 1;
 		$user->save();
 	}
+
+	public function getPlay($id)
+	{
+		$player_id = $id;
+
+		$users_questions = User::find($id)->questions;
+		$select_users_questions = Question::find($users_questions);
+		
+		$question = $select_users_questions->random(1);
+
+		return view('pages.play', compact('question', 'player_id'));
+	}
+
+	public function postPlay(Request $request)
+	{
+		return $request->all();
+	}
     
 }

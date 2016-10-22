@@ -57,9 +57,18 @@ Route::get('question/select', [
 	'as' 	=> '/',
 ]);
 
-
 Route::post('question/answer', [
 	'uses' 	=> 'PagesController@postUserAddQuestion',
+	'as' 	=> '/',
+]);
+
+Route::get('play/{id}', [
+	'uses' 	=> 'PagesController@getPlay',
+	'as' 	=> '/',
+]);
+
+Route::post('play', [
+	'uses' 	=> 'PagesController@postPlay',
 	'as' 	=> '/',
 ]);
 
