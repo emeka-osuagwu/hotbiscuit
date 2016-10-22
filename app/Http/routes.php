@@ -58,5 +58,12 @@ Route::get('question/select', [
 ]);
 
 
+Route::post('question/answer', [
+	'uses' 	=> 'PagesController@postUserAddQuestion',
+	'as' 	=> '/',
+]);
+
+
+
 
 // Route::get('/auth/{provider}', 'OauthController@getSocialLogin');

@@ -125,13 +125,23 @@ class PagesController extends Controller
 
 	public function selectQuestion()
 	{
-		$user_questions = User::find(Auth::user()->id);
+		$user_questions = User::find(Auth::user()->id)->questions;
 		
-		return $user_questions; 
+		$question 			= Question::all()->except($user_questions)->random(1);
+		$question_number 	= collect($user_questions)->count() + 1;
 		
-
-		return $questions = Question::all()->except($emeka);
-		return view('pages.question_select', compact('questions'));
+		return view('pages.question_select', compact('question', 'question_number'));
 	}
+
+	public function postUserAddQuestion(Request $request)
+	{
+		$question = [
+			"answer" 		=> $request['answer'],
+			"user_id" 		=> Auth::user()->id,
+			"question_id" 	=> (int) $request['question_id']
+		];
+
+		return $question;
+	}	
     
 }
