@@ -20,6 +20,7 @@ class User extends Authenticatable
         'location', 
         'username', 
         'password',
+        'questions', 
     ];
 
     /**

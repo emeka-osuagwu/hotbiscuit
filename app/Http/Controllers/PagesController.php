@@ -7,6 +7,7 @@ use Auth;
 use Session;
 use App\User;
 use Validator;
+use App\Question;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -124,7 +125,13 @@ class PagesController extends Controller
 
 	public function selectQuestion()
 	{
-		return view('pages.question_select');
+		$user_questions = User::find(Auth::user()->id);
+		
+		return $user_questions; 
+		
+
+		return $questions = Question::all()->except($emeka);
+		return view('pages.question_select', compact('questions'));
 	}
     
 }
