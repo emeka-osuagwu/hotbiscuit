@@ -10,6 +10,7 @@ use Validator;
 use App\Question;
 use App\UserQuestion;
 use App\Http\Requests;
+use App\PlayedQuestions;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -178,30 +179,59 @@ class PagesController extends Controller
 		$user->save();
 	}
 
+	public function getPlayError()
+	{
+		return view('pages.play_error');
+	}
+
 	public function getPlay($id)
 	{
 		$player_id = $id;
 
+		$played_questions_with_user = PlayedQuestions::where([
+												['player_id', Auth::user()->id],
+												['owner_id', $id]
+											])->get();
+
+		$played_questions_with_user_id = array_pluck($played_questions_with_user, 'question_id');
+
+		$number_of_played_questions = $played_questions_with_user->count();
+
+		if ($number_of_played_questions == 15) 
+		{
+			return redirect('play/error');
+		}
+
 		$users_questions = User::find($id)->questions;
-		$select_users_questions = Question::find($users_questions);
-		
+		$select_users_questions = Question::find($users_questions)->except($played_questions_with_user_id);
 		$question = $select_users_questions->random(1);
 
-		return view('pages.play', compact('question', 'player_id'));
+		return view('pages.play', compact('question', 'player_id', 'number_of_played_questions'));
 	}
 
 	public function postPlay(Request $request)
 	{
+		$status = 0;
+
+		$question_answer = Question::find($request['question_id'])->answer;
+
+		if ($question_answer == $request['answer'] ) 
+		{
+			$status = 1;
+		}
+
 		$played = [
 			"answer" 		=> $request['answer'],
-			"against" 		=> (int) $request['player_id'],
+			"owner_id" 		=> (int) $request['player_id'],
 			"player_id" 	=> Auth::user()->id,
 			"question_id" 	=> (int) $request['question_id'],
+			"status"		=> $status,
 		];
 		
-		return $played;
 
-		return $request->all();
+		PlayedQuestions::create($played);
+		
+		return back();
 	}
     
 }

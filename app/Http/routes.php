@@ -62,6 +62,11 @@ Route::post('question/answer', [
 	'as' 	=> '/',
 ]);
 
+Route::get('play/error', [
+	'uses' 	=> 'PagesController@getPlayError',
+	'as' 	=> '/',
+]);
+
 Route::get('play/{id}', [
 	'uses' 	=> 'PagesController@getPlay',
 	'as' 	=> '/',

@@ -5,7 +5,7 @@
   @include('pages.sections.header')
   
 
-  @if (1 == 2)
+  @if ($can_play == false)
     <script>
       swal({
         title: "Opp sorry you can only have 15 questions",
@@ -29,7 +29,7 @@
   <section class="col-lg-12 test-section-1 section-1 container" id="home-container">
       <div class="section-1__content__card center card test-card">
        <div class="test-card-section-1__content__card__image-holder">
-         <div class="test-card-section-1__content__card__question-count question-count">Question </div>
+         <div class="test-card-section-1__content__card__question-count question-count">Question {{ $number_of_played_questions + 1 }} </div>
        </div>
         <div class="test-card-section-1__content__card__question-holder question-holder">
           <div class="option">
