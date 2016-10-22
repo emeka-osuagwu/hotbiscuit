@@ -8,6 +8,7 @@ use Session;
 use App\User;
 use Validator;
 use App\Question;
+use App\UserQuestion;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -127,10 +128,18 @@ class PagesController extends Controller
 	{
 		$user_questions = User::find(Auth::user()->id)->questions;
 		
+		$can_add = true;
+
+		if (collect($user_questions)->count() == 15) {
+			$can_add = false;
+			$this->changeQuestonStatus();
+		}
+
 		$question 			= Question::all()->except($user_questions)->random(1);
+		
 		$question_number 	= collect($user_questions)->count() + 1;
 		
-		return view('pages.question_select', compact('question', 'question_number'));
+		return view('pages.question_select', compact('question', 'question_number', 'can_add'));
 	}
 
 	public function postUserAddQuestion(Request $request)
@@ -141,7 +150,32 @@ class PagesController extends Controller
 			"question_id" 	=> (int) $request['question_id']
 		];
 
-		return $question;
-	}	
+		$user_questions =  UserQuestion::create($question);
+
+		$user = User::find(Auth::user()->id);
+
+		if ($user->questions == null || $user_questions == '') 
+		{
+			$user->questions = [$user_questions->id];
+		}
+		else
+		{
+			$data = $user->questions;
+			array_push($data, $user_questions->id);
+			$user->questions = $data;
+		}
+
+		$user->save();
+		
+		return redirect('question/select');
+
+	}
+
+	public function changeQuestonStatus()
+	{
+		$user = User::find(Auth::user()->id);
+		$user->question_status = 1;
+		$user->save();
+	}
     
 }

@@ -19,7 +19,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'phone'             => 0000000000,
         'about'             => "this is a user",
         'password'          => bcrypt(str_random(10)),
-        'questions'         => json_encode([1, 2]),
         'location'          => "lagos",
         'username'          => $faker->name,
         'remember_token'    => str_random(10),

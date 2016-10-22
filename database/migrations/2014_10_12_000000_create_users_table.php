@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('sex')->nullable();
             $table->string('phone')->nullable();
             $table->string('password');
-            $table->json('questions');
+            $table->json('questions')->nullable();
             $table->integer('age')->nullable();
             
             $table->integer('profile_status')->default(0);

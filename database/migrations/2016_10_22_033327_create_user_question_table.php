@@ -14,6 +14,11 @@ class CreateUserQuestionTable extends Migration
     {
         Schema::create('user_questions', function (Blueprint $table) {
             $table->increments('id');
+            
+            $table->integer('user_id');
+            $table->integer('question_id');
+            $table->string('answer');
+            
             $table->timestamps();
         });
     }
