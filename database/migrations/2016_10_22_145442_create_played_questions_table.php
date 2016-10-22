@@ -14,6 +14,13 @@ class CreatePlayedQuestionsTable extends Migration
     {
         Schema::create('played_questions', function (Blueprint $table) {
             $table->increments('id');
+            
+            $table->integer('status')->default(0);
+            $table->integer('owner_id');
+            $table->integer('player_id');
+            $table->integer('question_id');
+            $table->string('answer');
+            
             $table->timestamps();
         });
     }
