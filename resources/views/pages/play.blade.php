@@ -3,28 +3,6 @@
 @section('content')
 
   @include('pages.sections.header')
-  
-
-  @if ($can_play == false)
-    <script>
-      swal({
-        title: "Opp sorry you can only have 15 questions",
-        type: "success",
-        confirmButtonColor: "#298829",
-        confirmButtonText: "OK",
-
-        closeOnConfirm: false,
-        closeOnCancel: false
-      },
-      function(isConfirm)
-      {
-        if (isConfirm) {
-            window.location="/";
-          }
-      });
-    </script>
-  @endif  
-
 
   <section class="col-lg-12 test-section-1 section-1 container" id="home-container">
       <div class="section-1__content__card center card test-card">
