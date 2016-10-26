@@ -157,7 +157,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Laravel\Socialite\SocialiteServiceProvider::class
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        JD\Cloudder\CloudderServiceProvider::class,
+        'Cloudder'  => JD\Cloudder\Facades\Cloudder::class
 
     ],
 
