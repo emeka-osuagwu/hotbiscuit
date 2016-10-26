@@ -43,10 +43,10 @@
               <div class="col-lg-12">
                 <input type="text" name="username" value="{{ Auth::user()->username }}" placeholder="Username" />
               </div>
-
+<!-- 
               <div class="col-lg-12">
                 <input type="file" name="file"  placeholder="Image" />
-              </div>
+              </div> -->
 
               <div class="col-lg-12">
                 <input type="number" name="age" value="{{ Auth::user()->age }}" placeholder="Age" />
