@@ -159,7 +159,6 @@ return [
 
         Laravel\Socialite\SocialiteServiceProvider::class,
         JD\Cloudder\CloudderServiceProvider::class,
-        'Cloudder'  => JD\Cloudder\Facades\Cloudder::class
 
     ],
 
@@ -208,7 +207,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
-        'Excel' => 'Maatwebsite\Excel\Facades\Excel'
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+        'Cloudder'  => JD\Cloudder\Facades\Cloudder::class
     ],
 
 ];

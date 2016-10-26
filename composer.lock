@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8b9d3eb9e5647413cc5ac7a57ffaa6dd",
-    "content-hash": "0d5abdf5e6b3ca605d3866b4ea0fb06c",
+    "hash": "f44529dbc83d5f49a8ebf24cccdc4217",
+    "content-hash": "98648ea3af6ebe6db3f04366c9fd4a56",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -531,16 +531,16 @@
         },
         {
             "name": "jrm2k6/cloudder",
-            "version": "0.2.2",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jrm2k6/cloudder.git",
-                "reference": "406711dae7e5f23fb195806c048136ddebfa2ab5"
+                "reference": "d96cf2eac4d2f442d16bc1ccd576d808e6b7311a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jrm2k6/cloudder/zipball/406711dae7e5f23fb195806c048136ddebfa2ab5",
-                "reference": "406711dae7e5f23fb195806c048136ddebfa2ab5",
+                "url": "https://api.github.com/repos/jrm2k6/cloudder/zipball/d96cf2eac4d2f442d16bc1ccd576d808e6b7311a",
+                "reference": "d96cf2eac4d2f442d16bc1ccd576d808e6b7311a",
                 "shasum": ""
             },
             "require": {
@@ -578,7 +578,7 @@
                 "laravel4",
                 "upload"
             ],
-            "time": "2015-11-29 20:28:50"
+            "time": "2016-10-05 20:55:04"
         },
         {
             "name": "laravel/framework",

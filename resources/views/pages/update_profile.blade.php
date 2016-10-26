@@ -45,6 +45,10 @@
               </div>
 
               <div class="col-lg-12">
+                <input type="file" name="image"  placeholder="Image" />
+              </div>
+
+              <div class="col-lg-12">
                 <input type="number" name="age" value="{{ Auth::user()->age }}" placeholder="Age" />
               </div>
               

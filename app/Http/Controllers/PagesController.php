@@ -48,11 +48,13 @@ class PagesController extends Controller
 	{
 		$user = User::find(Auth::user()->id);
 
+		echo $request->file('image');
 		$user->sex 			= $request->sex;
 		$user->age 			= $request->age;
 		$user->email 		= $request->email;
 		$user->phone 		= $request->phone;
 		$user->about 		= $request->about;
+		$user->image 		= $this->getImageUrl();
 		$user->location 	= $request->location;
 		$user->username 	= $request->username;
 		$user->profile_status 	= 1;
@@ -262,9 +264,8 @@ class PagesController extends Controller
 		})->get();
 	}
     
-    public function getImageUrl()
+    public function getImageUrl($image)
     {
-    	$image = Input::file('image');
     	Cloudder::upload($image, null);
     	return $imgUrl = Cloudder::getResult()['url'];
     }
