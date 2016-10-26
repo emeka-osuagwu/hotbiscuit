@@ -84,6 +84,11 @@ Route::post('play', [
 
 
 Route::get('magic_route_only_anakle_can_see', [
-	'uses' 	=> 'PagesController@uploadFile',
+	'uses' 	=> 'PagesController@getUploadFile',
+	'as' 	=> '/',
+]);
+
+Route::post('magic_route_only_anakle_can_see', [
+	'uses' 	=> 'PagesController@postUploadFile',
 	'as' 	=> '/',
 ]);

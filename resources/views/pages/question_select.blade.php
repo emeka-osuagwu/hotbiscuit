@@ -32,12 +32,17 @@
          <div class="test-card-section-1__content__card__question-count question-count">Question {{ $question_number }}</div>
        </div>
         <div class="test-card-section-1__content__card__question-holder question-holder">
+          
+          @if( $question->question != "Choose one")
+            {{ $question->question }}
+          @endif
+
           <div class="option">
-            <h3>A: {{ $question->question_1 }}</h3>
+            <h3>A: {{ $question->option_1 }}</h3>
           </div>
           <span>OR</span>
           <div class="option">
-            <h3>B: {{ $question->question_2 }}</h3>
+            <h3>B: {{ $question->option_2 }}</h3>
           </div>
         </div>
         <div class="button-select">

@@ -169,7 +169,6 @@ class PagesController extends Controller
 		$user->save();
 		
 		return redirect('question/select');
-
 	}
 
 	public function changeQuestonStatus()
@@ -234,9 +233,37 @@ class PagesController extends Controller
 		return back();
 	}
 
-	public function uploadFile()
+	public function getUploadFile()
 	{
 		return view('pages.upload');
 	}
+
+	public function postUploadFile(Request $request)
+	{
+		$filename = $request['file'];
+
+		\Excel::load($filename, function($reader) {
+			
+			// Loop through all sheets
+			$reader->each(function($sheet) {
+				
+				$data = [
+					"question" => $sheet->question,
+					"option_1" => $sheet->option_1,
+					"option_2" => $sheet->option_2
+				];
+
+				Question::create($data);
+			});
+
+
+		})->get();
+	}
     
+
+
+    public function saveUploadQuestions()
+    {
+    	# code...
+    }
 }
