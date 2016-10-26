@@ -77,9 +77,6 @@ Route::post('play', [
 	'as' 	=> '/',
 ]);
 
-
-
-
 // Route::get('/auth/{provider}', 'OauthController@getSocialLogin');
 
 

@@ -260,10 +260,4 @@ class PagesController extends Controller
 		})->get();
 	}
     
-
-
-    public function saveUploadQuestions()
-    {
-    	# code...
-    }
 }
