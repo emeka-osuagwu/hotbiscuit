@@ -6,12 +6,14 @@ namespace App\Http\Controllers;
 use Auth;
 use Session;
 use App\User;
+use Cloudder;
 use Validator;
 use App\Question;
 use App\UserQuestion;
 use App\Http\Requests;
 use App\PlayedQuestions;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input as Input;
 
 class PagesController extends Controller
 {
@@ -260,4 +262,10 @@ class PagesController extends Controller
 		})->get();
 	}
     
+    public function getImageUrl()
+    {
+    	$image = Input::file('image');
+    	Cloudder::upload($image, null);
+    	return $imgUrl = Cloudder::getResult()['url'];
+    }
 }
