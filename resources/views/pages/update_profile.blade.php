@@ -45,7 +45,7 @@
               </div>
 
               <div class="col-lg-12">
-                <input type="file" name="image"  placeholder="Image" />
+                <input type="file" name="file"  placeholder="Image" />
               </div>
 
               <div class="col-lg-12">

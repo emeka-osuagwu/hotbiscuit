@@ -6,14 +6,14 @@ namespace App\Http\Controllers;
 use Auth;
 use Session;
 use App\User;
-use Cloudder;
 use Validator;
 use App\Question;
 use App\UserQuestion;
 use App\Http\Requests;
 use App\PlayedQuestions;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Input as Input;
+use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
@@ -48,13 +48,12 @@ class PagesController extends Controller
 	{
 		$user = User::find(Auth::user()->id);
 
-		echo $request->file('image');
 		$user->sex 			= $request->sex;
 		$user->age 			= $request->age;
 		$user->email 		= $request->email;
 		$user->phone 		= $request->phone;
 		$user->about 		= $request->about;
-		$user->image 		= $this->getImageUrl();
+		$user->image 		= $this->cloudderRepo->getImageUrl();
 		$user->location 	= $request->location;
 		$user->username 	= $request->username;
 		$user->profile_status 	= 1;
@@ -263,10 +262,5 @@ class PagesController extends Controller
 
 		})->get();
 	}
-    
-    public function getImageUrl($image)
-    {
-    	Cloudder::upload($image, null);
-    	return $imgUrl = Cloudder::getResult()['url'];
-    }
+
 }

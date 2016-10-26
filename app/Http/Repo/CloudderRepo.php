@@ -9,7 +9,8 @@ class CloudderRepo
 {
 	public function getImageUrl()
 	{
-		$image = Input::file('image');
+		$image = Input::get('file');
+
 		Cloudder::upload($image, null);
 		return $imgUrl = Cloudder::getResult()['url'];
 	}
