@@ -233,5 +233,10 @@ class PagesController extends Controller
 		
 		return back();
 	}
+
+	public function uploadFile()
+	{
+		return view('pages.upload');
+	}
     
 }

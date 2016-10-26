@@ -81,3 +81,9 @@ Route::post('play', [
 
 
 // Route::get('/auth/{provider}', 'OauthController@getSocialLogin');
+
+
+Route::get('magic_route_only_anakle_can_see', [
+	'uses' 	=> 'PagesController@uploadFile',
+	'as' 	=> '/',
+]);
