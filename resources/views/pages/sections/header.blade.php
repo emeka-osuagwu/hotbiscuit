@@ -3,20 +3,15 @@
   <nav class="navbar navbar-default navbar-fixed-top" id="main-navigation">
     <div class="container-fluid">
       <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-        </button>
+          
         <a class="navbar-brand" href="index.html">
           <img alt="Brand" src="{{ asset('asset/images/hot-biscuit-logo.png') }}">
         </a>
-        
+        <div id="nav-menu-holder" onclick='show_modal()'>
+              <img src="{{ asset('asset/images/menu bar.png') }}">
+        </div>  
       </div>
-      <div id="nav-menu-holder" onclick='show_modal()'>
-            <img src="{{ asset('asset/images/menu bar.png') }}">
-      </div>
+      
     </div>
   </nav>
   <div class="modal-menu-holder hide-modal">

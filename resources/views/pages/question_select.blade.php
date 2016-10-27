@@ -34,13 +34,13 @@
         <div class="test-card-section-1__content__card__question-holder question-holder">
           
           @if( $question->question != "Choose one")
-            {{ $question->question }}
+            <div class="question-title"> {{ $question->question }}?</div>
           @endif
 
           <div class="option">
             <h3>A: {{ $question->option_1 }}</h3>
           </div>
-          <span>OR</span>
+          <span>Or</span>
           <div class="option">
             <h3>B: {{ $question->option_2 }}</h3>
           </div>

@@ -43,7 +43,9 @@ class PagesController extends Controller
 	{
 		return view('pages.update_profile');
 	}
-
+	public function showScore(){
+		return view('pages.score_page');
+	}
 	public function postUpdateProfile(Request $request)
 	{
 		$user = User::find(Auth::user()->id);

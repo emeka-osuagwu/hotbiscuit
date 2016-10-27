@@ -61,11 +61,11 @@
             </div>
              -->
             <div class="col-lg-12">
-              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="submit" class="btn btn-success reg-button">Submit</button>
             </div>
 
             <div class="col-lg-12">
-              <a href="{{ Url('login') }}" class="btn btn-success">Login</a>
+              <span>Back to <a href="{{ Url('login') }}" class="return-lnk">Login</a></span>
             </div>
           
           </div>

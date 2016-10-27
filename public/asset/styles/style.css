@@ -3,7 +3,7 @@
 body{
 	width: 100%;
 	margin: 0px;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 a{
 	color: inherit;
@@ -136,6 +136,10 @@ div{
 	width: 40%;
 	margin-top: 30px;
 	overflow: hidden;
+
+}
+.registration-section-1__content__card{
+	padding-bottom: 10px;
 }
 .section-1__content__card__image-holder, .registration-section-1__content__card__image-holder,
 .test-card-section-1__content__card__image-holder{
@@ -147,12 +151,57 @@ div{
 .registration-section-1__content__card__image-holder{
 	background-image: url('../images/yellow-card-image.jpg');
 }
+.registration-section-1__content__card .reg-button{
+	background-color: rgba(0,0,0,0);
+	text-transform: uppercase;
+	padding-top: 8px;
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+	transition: all 0.4s ease-in;
+	-moz-transition: all 0.4s ease-in;
+	-webkit-transition: all 0.4s ease-in;
+}
+.registration-section-1__content__card .reg-button:hover{
+	background-color: rgba(10,10,10,1);
+	transition: all 0.4s ease-in;
+	-moz-transition: all 0.4s ease-in;
+	-webkit-transition: all 0.4s ease-in;
+	border: 2px solid rgb(10, 10, 10);	
+}
+.registration-section-1__content__card .return-lnk{
+	text-decoration: underline;
+}
+.registration-section-1__content__card .select-title{
+	text-align: left;
+	margin-bottom: 10px;
+}
+.registration-section-1__content__card .select-box{
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color: rgba(0,0,0,0);
+	border: 2px solid rgba(30, 30, 30, 0.7);
+}
+.registration-section-1__content__card .select-file{
+	border: none;
+	background-color: rgba(0,0,0,0);
+}
+.registration-section-1__content__card textarea{
+	width: 100%;
+	height: 150px;
+	background-color: rgba(0,0,0,0);
+	border:  none;
+	border-bottom: 2px solid rgba(30, 30, 30, 0.7);
+}
 .test-card{
 	background-color: rgba(245, 245, 245, 1);
 	/* position: absolute;
 	top: 10px;
 	left: auto;
 	right: auto; */
+}
+.test-section-1{
+	background-image: url('../images/white-bg.jpg') !important;
 }
 .test-card-section-1__content__card__image-holder{
 	background-image: url('../images/red-card-image.jpg');
@@ -170,7 +219,6 @@ div{
 .test-card .question-holder{
 	box-shadow: 2px 2px 2px rgba(10,10,10,0.15);
 	margin-top: 50px;
-	padding-top: 25px;
 	padding-bottom: 25px;
 	border-radius: 4px;
 	background-color: rgb(250, 250, 250);
@@ -181,8 +229,12 @@ div{
 .test-card .question-holder h3, span{
 	width: 100%;
 	display: block;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 	text-align: center;
+}
+.test-card .question-holder h3{
+	font-size: 24px;
 }
 .test-card .button-select{
 	width: 80%;
@@ -215,6 +267,13 @@ div{
 	padding-left: 20px;
 	padding-right: 20px;
 
+}
+.section-1__content__card .question-title{
+	padding: 20px;
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid rgba(80, 80, 80, 0.1);
 }
 .registration-section-1__content__card__form-holder{
 	margin-top: 40px;
@@ -396,6 +455,64 @@ div{
 }
 .play-button-males{
 	background-color: #1b2437;
+}
+#score-card{
+	padding: 30px;
+	background-image: url('../images/white-bg.jpg');
+}
+#score-card .score-holder{
+	text-align: center;
+}
+#score-card .score-holder h3{
+	font-size: 36px;
+}
+#score-card .score-holder h2{
+	font-size: 68px;
+}
+#score-card .score-holder p{
+	font-size: 18px;
+}
+#score-card .score-holder .images-holder{
+	margin-top: 20px;
+}
+#score-card .score-holder .images-holder .images-holder-div{
+	height: 160px;
+	overflow: hidden;
+	margin-bottom: 40px;
+}
+#score-card .score-holder .images-holder .images-holder-div img{
+	filter: drop-shadow(2px 4px 3px rgba(50, 50, 50, 0.4));
+}
+#score-card .score-holder .images-holder .images-holder-left img{
+	float: right;
+}
+#score-card .score-holder .images-holder .images-holder-right img{
+	float: left;
+}
+#score-card .score-holder #meet-button-holder{
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+#score-card .score-holder #meet-button-holder .meet-button{
+	background-color: rgb(175, 45, 53);
+	color: #f9f9f9;
+	box-shadow: 4px 3px 3px rgba(10,10,10,0.3);
+	border: 2px solid rgb(175, 45, 53);
+}
+#score-card .score-holder #meet-button-holder .back-button{
+	background-color: #1b2437;
+	color: #f9f9f9;
+	box-shadow: 4px 3px 3px rgba(10,10,10,0.3);
+	border: 2px solid #1b2437;
+}
+#score-card .score-holder .button{
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,0);
+	border: 2px solid;
+	margin-bottom: 20px;
+	margin-left: 25px;
 }
 /*--- FOOTER ---*/
 .footer{

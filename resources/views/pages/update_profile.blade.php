@@ -37,47 +37,46 @@
           <form action="{{ Url('profile/update') }}" method="post">
             <div class="registration-section-1__content__card__form-holder">
               <div class="col-lg-12 ">
-                <input placeholder="Email" name="email"  value="{{ Auth::user()->email }}" />
+                <input placeholder="Your Email" name="email"  value="{{ Auth::user()->email }}" />
               </div>
 
               <div class="col-lg-12">
-                <input type="text" name="username" value="{{ Auth::user()->username }}" placeholder="Username" />
+                <input type="text" name="username" value="{{ Auth::user()->username }}" placeholder="Enter Your Desired Username" />
               </div>
 
               <div class="col-lg-12">
-                <input type="file" name="file"  placeholder="Image" />
+                <span class="select-title">Select a Profile Picture</span>
+                <input class="select-file" type="file" name="file"  placeholder="Image" />
               </div>
 
               <div class="col-lg-12">
-                <input type="number" name="age" value="{{ Auth::user()->age }}" placeholder="Age" />
+
+                <input type="number" name="age" value="{{ Auth::user()->age }}" placeholder="Enter your Age" />
               </div>
-              
-              <div class="col-lg-12">
-                <select name="sex" required="true">
-                  <option value="">Select</option>
+              <div class="col-lg-6">
+                <span class="select-title">Select Your Sex</span>
+                <select class="select-box" name="sex" required="true">
                   <option value="male">Male</option>
                   <option value="female">Female</option>
-                </select>
+                </select>  
               </div>
-              
-              <div class="col-lg-12">
-                <select name="location" required="true">
-                  <option value="">Select Location</option>
+              <div class="col-lg-6">
+                <span class="select-title">Select Your Location</span>
+                <select class="select-box" name="location" required="true">
                   <option value="lagos">lagos</option>
                   <option value="Uyo">Uyo</option>
-                </select>
+                </select>   
+              </div>
+              <div class="col-lg-12">
+                <input type="number"  name="phone"  value="{{ Auth::user()->phone }}" placeholder="Enter Your Phone Number" />
               </div>
               
               <div class="col-lg-12">
-                <input type="number"  name="phone"  value="{{ Auth::user()->phone }}" placeholder="Phone" />
+                <Textarea name="about"  value="{{ Auth::user()->about }}" placeholder="Tell Us About Yourself"></Textarea>
               </div>
               
               <div class="col-lg-12">
-                <input type="text"  name="about"  value="{{ Auth::user()->about }}" placeholder="About" />
-              </div>
-              
-              <div class="col-lg-12">
-                <button type="submit" class="btn btn-success">Update</button>
+                <button type="submit" class="btn btn-success reg-button">Update</button>
               </div>
             
             </div>

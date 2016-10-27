@@ -69,11 +69,11 @@
             </div>
              -->
             <div class="col-lg-12">
-              <button type="submit" class="btn btn-success">Login</button>
+              <button type="submit" id="login-button" class="btn btn-success reg-buttton">Login</button>
             </div>
 
             <div class="col-lg-12">
-              <a href="{{ Url('register') }}" class="btn btn-success">Register</a>
+              <span>I don't have an account <a href="{{ Url('register') }}" class="return-lnk">Register</a> Now!</span>
             </div>
           
           </div>
