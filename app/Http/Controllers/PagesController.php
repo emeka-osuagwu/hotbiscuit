@@ -11,9 +11,8 @@ use App\Question;
 use App\UserQuestion;
 use App\Http\Requests;
 use App\PlayedQuestions;
-
-use Illuminate\Support\Facades\Input as Input;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input as Input;
 
 class PagesController extends Controller
 {
@@ -55,7 +54,7 @@ class PagesController extends Controller
 		$user->email 		= $request->email;
 		$user->phone 		= $request->phone;
 		$user->about 		= $request->about;
-		$user->image 		= $this->cloudderRepo->getImageUrl();
+		// $user->image 		= $this->cloudderRepo->getImageUrl();
 		$user->location 	= $request->location;
 		$user->username 	= $request->username;
 		$user->profile_status 	= 1;
