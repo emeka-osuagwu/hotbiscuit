@@ -36,14 +36,16 @@
           @if( $question->question != "Choose one")
             <div class="question-title"> {{ $question->question }}?</div>
           @endif
-
-          <div class="option">
-            <h3>A: {{ $question->option_1 }}</h3>
+          <div class="option-holder">
+            <div class="option">
+              <h3>A: {{ $question->option_1 }}</h3>
+            </div>
+            <span>Or</span>
+            <div class="option">
+              <h3>B: {{ $question->option_2 }}</h3>
+            </div>  
           </div>
-          <span>Or</span>
-          <div class="option">
-            <h3>B: {{ $question->option_2 }}</h3>
-          </div>
+          
         </div>
         <div class="button-select">
           <form action="{{ Url('question/answer') }}" method="post">

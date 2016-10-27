@@ -31,6 +31,7 @@ Route::get('logout', function () {
 	return redirect('login');
 });
 
+Route::get('go-to-users', 'PagesController@goToUsers');
 
 Route::get('/login', [
 	'uses' 	=> 'PagesController@getLogin',

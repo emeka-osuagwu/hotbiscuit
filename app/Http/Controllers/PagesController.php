@@ -42,6 +42,10 @@ class PagesController extends Controller
 	{
 		return view('pages.update_profile');
 	}
+	public function goToUsers()
+	{
+		return view('pages.users');
+	}
 	public function showScore(){
 		return view('pages.score_page');
 	}
