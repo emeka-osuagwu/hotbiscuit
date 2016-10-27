@@ -89,3 +89,8 @@ Route::post('magic_route_only_anakle_can_see', [
 	'uses' 	=> 'PagesController@postUploadFile',
 	'as' 	=> '/',
 ]);
+
+Route::get('score', [
+	'uses' => 'PagesController@showScore',
+	'as' => '/',
+]);

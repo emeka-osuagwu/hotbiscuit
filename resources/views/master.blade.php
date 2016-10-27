@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="{!! load_asset('asset/styles/style.css') !!}" type="text/css">
         <link rel="stylesheet" href="{!! load_asset('asset/styles/responsify.css') !!}" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Petit+Formal+Script|Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Khand|PT+Serif" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
         <script type="text/javascript" src="{!! load_asset('asset/scripts/bootstrap.min.js') !!}"></script>   
         <script type="text/javascript" src="{!! load_asset('asset/scripts/index.js') !!}"></script>
         
