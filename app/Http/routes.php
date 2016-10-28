@@ -31,7 +31,6 @@ Route::get('logout', function () {
 	return redirect('login');
 });
 
-
 Route::get('/login', [
 	'uses' 	=> 'PagesController@getLogin',
 	'as' 	=> '/',

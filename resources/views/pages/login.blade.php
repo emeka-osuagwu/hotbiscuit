@@ -69,7 +69,7 @@
             </div>
              -->
             <div class="col-lg-12">
-              <button type="submit" id="login-button" class="btn btn-success reg-buttton">Login</button>
+              <button type="submit" id="login-button" class="btn btn-success reg-button">Login</button>
             </div>
 
             <div class="col-lg-12">

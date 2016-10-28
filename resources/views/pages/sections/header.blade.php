@@ -14,6 +14,15 @@
       
     </div>
   </nav>
+  <div class="modal modal-image-container col-lg-12">
+        <div class="modal-image-holder">
+          <div class="close-icon-holder" id="close-icon-holder">
+          </div>
+          <div class="modal-image">
+            <img src="{{ asset('asset/images/burnt_beans.jpg') }}">
+          </div>
+        </div>
+  </div>
   <div class="modal-menu-holder hide-modal">
     <div class="modal-menu">
       <div class="logo-holder">

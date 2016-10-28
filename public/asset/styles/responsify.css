@@ -32,4 +32,13 @@
 		margin-right: auto;
 		display: block;
 	}
+	
+	.modal-image-holder{
+		width: 80%;
+	}
+}
+@media (max-width: 480px){
+	#score-card .score-holder .images-holder .images-holder-div{
+		height: auto;
+	}
 }
