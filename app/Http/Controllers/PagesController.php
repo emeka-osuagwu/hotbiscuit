@@ -205,7 +205,7 @@ class PagesController extends Controller
 
 		$users_questions = User::find($id)->questions;
 		$select_users_questions = Question::find($users_questions)->except($played_questions_with_user_id);
-		return $question = $select_users_questions->random(1);
+		$question = $select_users_questions->random(1);
 
 		return view('pages.play', compact('question', 'player_id', 'number_of_played_questions'));
 	}
@@ -215,7 +215,7 @@ class PagesController extends Controller
 		$status = 0;
 
 		$question_answer = UserQuestion::where([
-							['user_id', $request['player_id']]
+							['question_id', $request['question_id']]
 						])->get();
 
 		return $request->all();
@@ -265,8 +265,9 @@ class PagesController extends Controller
 				Question::create($data);
 			});
 
-
 		})->get();
+
+		return redirect('/');
 	}
 
 	public function getScore($id)
