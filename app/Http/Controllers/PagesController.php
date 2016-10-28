@@ -42,9 +42,7 @@ class PagesController extends Controller
 	{
 		return view('pages.update_profile');
 	}
-	public function showScore(){
-		return view('pages.score_page');
-	}
+
 	public function postUpdateProfile(Request $request)
 	{
 		$user = User::find(Auth::user()->id);
@@ -190,7 +188,7 @@ class PagesController extends Controller
 	public function getPlay($id)
 	{
 		$player_id = $id;
-
+		
 		$played_questions_with_user = PlayedQuestions::where([
 												['player_id', Auth::user()->id],
 												['owner_id', $id]
@@ -202,12 +200,12 @@ class PagesController extends Controller
 
 		if ($number_of_played_questions == 15) 
 		{
-			return redirect('play/error');
+			return redirect('score/' . $id );
 		}
 
 		$users_questions = User::find($id)->questions;
 		$select_users_questions = Question::find($users_questions)->except($played_questions_with_user_id);
-		$question = $select_users_questions->random(1);
+		return $question = $select_users_questions->random(1);
 
 		return view('pages.play', compact('question', 'player_id', 'number_of_played_questions'));
 	}
@@ -216,7 +214,14 @@ class PagesController extends Controller
 	{
 		$status = 0;
 
-		$question_answer = Question::find($request['question_id'])->answer;
+		$question_answer = UserQuestion::where([
+							['user_id', $request['player_id']]
+						])->get();
+
+		return $request->all();
+
+		return $question_answer . " " . $request->question_id;
+
 
 		if ($question_answer == $request['answer'] ) 
 		{
@@ -231,7 +236,7 @@ class PagesController extends Controller
 			"status"		=> $status,
 		];
 		
-
+		return $played;
 		PlayedQuestions::create($played);
 		
 		return back();
@@ -262,6 +267,18 @@ class PagesController extends Controller
 
 
 		})->get();
+	}
+
+	public function getScore($id)
+	{
+		$played_questions_with_user = PlayedQuestions::where([
+												['player_id', Auth::user()->id],
+												['owner_id', $id]
+											])->get();
+
+		return $played_questions_with_user;
+
+		return view('pages.score_page');
 	}
 
 }

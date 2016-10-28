@@ -10,7 +10,7 @@
          <div class="test-card-section-1__content__card__question-count question-count">Question {{ $number_of_played_questions + 1 }} </div>
        </div>
 
-       
+
        @if( $question->question != "Choose one")
          <div class="question-title"> {{ $question->question }}?</div>
        @endif
@@ -29,6 +29,7 @@
             <input type="text" hidden="true" name="question_id"  value="{{ $question->id }}">
             <input type="text" hidden="true" name="answer"  value="{{ $question->option_1 }}">
             <input type="text" hidden="true" name="player_id"  value="{{ $player_id }}">
+            <input type="text" hidden="true" name="real_answer"  value="{{ $question->answer }}">
             <button type="submit" class="btn option-a">A</button>
           </form>          
 

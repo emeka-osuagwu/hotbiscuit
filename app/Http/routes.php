@@ -90,7 +90,7 @@ Route::post('magic_route_only_anakle_can_see', [
 	'as' 	=> '/',
 ]);
 
-Route::get('score', [
-	'uses' => 'PagesController@showScore',
+Route::get('score/{id}', [
+	'uses' => 'PagesController@getScore',
 	'as' => '/',
 ]);
