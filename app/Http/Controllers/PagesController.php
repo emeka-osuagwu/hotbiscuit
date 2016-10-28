@@ -34,7 +34,8 @@ class PagesController extends Controller
 			return redirect('question/select');
 		}
 
-		$users = User::all()->take(10);
+		$users = User::where('profile_status', 1)->get()->take(10);
+
 		return view('pages.users', compact('users'));
 	}
 
@@ -212,6 +213,7 @@ class PagesController extends Controller
 
 	public function postPlay(Request $request)
 	{
+		return 1;
 		$status = 0;
 
 		$question_answer = UserQuestion::where([

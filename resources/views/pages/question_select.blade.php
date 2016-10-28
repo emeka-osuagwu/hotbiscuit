@@ -36,6 +36,7 @@
           @if( $question->question != "Choose one")
             <div class="question-title"> {{ $question->question }}?</div>
           @endif
+          
           <div class="option-holder">
             <div class="option">
               <h3>A: {{ $question->option_1 }}</h3>
