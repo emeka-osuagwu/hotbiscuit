@@ -249,9 +249,9 @@ class PagesController extends Controller
 
 	public function postUploadFile(Request $request)
 	{
-		$filename = $request['file'];
-
-		\Excel::load($filename, function($reader) {
+		$file = public_path('file/file.csv');
+		
+		\Excel::load($file, function($reader) {
 			
 			// Loop through all sheets
 			$reader->each(function($sheet) {
