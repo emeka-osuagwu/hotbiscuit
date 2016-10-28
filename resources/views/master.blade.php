@@ -12,8 +12,6 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Khand|PT+Serif" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-        <script type="text/javascript" src="{!! load_asset('asset/scripts/bootstrap.min.js') !!}"></script>   
-        <script type="text/javascript" src="{!! load_asset('asset/scripts/index.js') !!}"></script>
         
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
@@ -29,4 +27,7 @@
          -->
     </body>
     <script type="text/javascript" src="{!! load_asset('asset/scripts/jquery/jquery.js') !!}"></script>
+    <script type="text/javascript" src="{!! load_asset('asset/scripts/bootstrap.min.js') !!}"></script>   
+    <script type="text/javascript" src="{!! load_asset('asset/scripts/index.js') !!}"></script>
+        
 </html>
