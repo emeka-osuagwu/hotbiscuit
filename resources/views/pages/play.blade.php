@@ -4,12 +4,24 @@
 
   @include('pages.sections.header')
 
+
+  @if($number_of_played_questions > 2)
+    <div class="modal modal-image-container col-lg-12">
+          <div class="modal-image-holder">
+            <div class="close-icon-holder" id="close-icon-holder">
+            </div>
+            <div class="modal-image">
+              <img src="{{ asset('asset/images/' . $display_data['image'] . '.jpg') }}">
+            </div>
+          </div>
+    </div>
+  @endif
+
   <section class="col-lg-12 test-section-1 section-1 container" id="home-container">
       <div class="section-1__content__card center card test-card">
        <div class="test-card-section-1__content__card__image-holder">
          <div class="test-card-section-1__content__card__question-count question-count">Question {{ $number_of_played_questions + 1 }} </div>
        </div>
-
 
        @if( $question->question != "Choose one")
          <div class="question-title"> {{ $question->question }}?</div>

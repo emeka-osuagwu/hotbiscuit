@@ -215,7 +215,135 @@ class PagesController extends Controller
 
 		$question = $get_questions_to_play;
 
-		return view('pages.play', compact('question', 'player_id', 'number_of_played_questions'));
+		$played_questions_with_user = PlayedQuestions::where([
+												['player_id', Auth::user()->id],
+												['owner_id', $id]
+											])->get();
+
+		$questions 	= $played_questions_with_user;
+		$score  	= array_pluck($questions, 'status');
+		$score 		= array_sum($score);
+
+		
+		$display_data = [];
+
+		$display_data_array = [
+			
+			1 => [
+				"image" 	=> "burnt_beans"
+			],
+
+			2 => [
+				"image" => "fufu"
+			],
+
+			3 => [
+				"image" => "spoilt_bannna"
+			],
+
+			4 => [
+				"image" => "spoilt_bannna"
+			],
+
+			5 => [
+				"image" => "spoilt_bannna"
+			],
+
+			6 => [
+				"image" => "spoilt_bannna"
+			],
+
+			7 => [
+				"image" => "my_nice"
+			],
+
+			8 => [
+				"image" => "my_nice"
+			],
+
+			9 => [
+				"image" => "my_nice"
+			],
+
+			10 => [
+				"image" => "my_noreos"
+			],
+
+			11 => [
+				"image" => "my_noreos"
+			],
+
+			12 => [
+				"image" => "my_noreos"
+			],
+
+			13 => [
+				"image" => "my_shortbreadd"
+			],
+
+			14 => [
+				"image" => "my_shortbreadd"
+			],
+
+			15 => [
+				"image" => "my_shortbreadd"
+			]
+		
+		];	
+
+		switch($score)
+		{
+		    case 1:
+		        $display_data = $display_data_array['1'];
+		        break;
+		    case 2:
+		        $display_data = $display_data_array['2'];
+		        break;
+		    case 3:
+		        $display_data = $display_data_array['3'];
+		        break;
+		    case 4:
+		        $display_data = $display_data_array['4'];
+		        break;
+		    case 5:
+		        $display_data = $display_data_array['5'];
+		        break;
+		    case 6:
+		        $display_data = $display_data_array['6'];
+		        break;
+		    case 7:
+		        $display_data = $display_data_array['7'];
+		        break;
+		    case 8:
+		        $display_data = $display_data_array['8'];
+		        break;
+		    case 9:
+		        $display_data = $display_data_array['9'];
+		        break;
+		    case 10:
+		        $display_data = $display_data_array['10'];
+		        break;
+		    case 11:
+		        $display_data = $display_data_array['11'];
+		        break;
+		    case 12:
+		        $display_data = $display_data_array['12'];
+		        break;
+		    case 13:
+		        $display_data = $display_data_array['13'];
+		        break;
+		    case 14:
+		        $display_data = $display_data_array['14'];
+		        break;
+		    case 15:
+		        $display_data = $display_data_array['15'];
+		        break;
+		    default:
+		        echo "No information available for that day.";
+		        break;
+		}
+		
+		return view('pages.play', compact('question', 'player_id', 'number_of_played_questions', 'display_data'));
 	}
 
 	public function postPlay(Request $request)
