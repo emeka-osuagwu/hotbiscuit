@@ -276,9 +276,11 @@ class PagesController extends Controller
 												['owner_id', $id]
 											])->get();
 
-		return $played_questions_with_user;
-
-		return view('pages.score_page');
+		$questions 	= $played_questions_with_user;
+		$score  	= array_pluck($questions, 'status');
+		$score 		= array_sum($score);
+		
+		return view('pages.score_page', compact('questions', 'score'));
 	}
 
 }
