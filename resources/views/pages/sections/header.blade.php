@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
           
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{{ Url('/') }}">
           <img alt="Brand" src="{{ asset('asset/images/hot-biscuit-logo.png') }}">
         </a>
         <div id="nav-menu-holder" onclick='show_modal()'>

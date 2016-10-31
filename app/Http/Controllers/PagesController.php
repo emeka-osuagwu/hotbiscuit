@@ -29,6 +29,11 @@ class PagesController extends Controller
 			return redirect('profile');
 		}
 
+		if (Question::all()->count() < 1) 
+		{
+			return redirect('magic_route_only_anakle_can_see');	
+		}
+
 		if (Auth::user()->question_status == 0) 
 		{
 			return redirect('question/select');
@@ -123,8 +128,6 @@ class PagesController extends Controller
 			return redirect('register');
 		}
 
-
-
 		return $request->all();
 	}
 
@@ -149,7 +152,7 @@ class PagesController extends Controller
 	public function postUserAddQuestion(Request $request)
 	{
 		$question = [
-			"answer" 		=> $request['answer'],
+			"answer" 		=> trim($request['answer']),
 			"user_id" 		=> Auth::user()->id,
 			"question_id" 	=> (int) $request['question_id']
 		];
@@ -188,44 +191,44 @@ class PagesController extends Controller
 
 	public function getPlay($id)
 	{
+	
 		$player_id = $id;
-		
-		$played_questions_with_user = PlayedQuestions::where([
-												['player_id', Auth::user()->id],
-												['owner_id', $id]
-											])->get();
 
-		$played_questions_with_user_id = array_pluck($played_questions_with_user, 'question_id');
+		$player_questions_answerd_by_auth_user = PlayedQuestions::where([
+													['owner_id', $player_id],
+													['player_id', Auth::user()->id]
+												])->get();
 
-		$number_of_played_questions = $played_questions_with_user->count();
+		$number_of_played_questions = $player_questions_answerd_by_auth_user->count();
+
 
 		if ($number_of_played_questions == 15) 
 		{
 			return redirect('score/' . $id );
 		}
 
-		$users_questions = User::find($id)->questions;
-		$select_users_questions = Question::find($users_questions)->except($played_questions_with_user_id);
-		$question = $select_users_questions->random(1);
+
+		$get_player_questions = UserQuestion::where('user_id', $id)->get();
+		$player_questions_id = array_pluck($get_player_questions, 'question_id');
+		$get_questions_to_play = Question::find($player_questions_id)->random();
+	
+
+		$question = $get_questions_to_play;
 
 		return view('pages.play', compact('question', 'player_id', 'number_of_played_questions'));
 	}
 
 	public function postPlay(Request $request)
 	{
-		return 1;
 		$status = 0;
 
 		$question_answer = UserQuestion::where([
+							['user_id', $request['player_id']],
 							['question_id', $request['question_id']]
-						])->get();
-
-		return $request->all();
-
-		return $question_answer . " " . $request->question_id;
+						])->get()->first();
 
 
-		if ($question_answer == $request['answer'] ) 
+		if ($question_answer->answer == $request['answer']) 
 		{
 			$status = 1;
 		}
@@ -237,19 +240,13 @@ class PagesController extends Controller
 			"question_id" 	=> (int) $request['question_id'],
 			"status"		=> $status,
 		];
-		
-		return $played;
+
 		PlayedQuestions::create($played);
 		
 		return back();
 	}
 
-	public function getUploadFile()
-	{
-		return view('pages.upload');
-	}
-
-	public function postUploadFile(Request $request)
+	public function getUploadFile(Request $request)
 	{
 		$file = public_path('file/file.csv');
 		
@@ -259,9 +256,9 @@ class PagesController extends Controller
 			$reader->each(function($sheet) {
 				
 				$data = [
-					"question" => $sheet->question,
-					"option_1" => $sheet->option_1,
-					"option_2" => $sheet->option_2
+					"question" => trim($sheet->question),
+					"option_1" => trim($sheet->option_1),
+					"option_2" => trim($sheet->option_2)
 				];
 
 				Question::create($data);
