@@ -5,7 +5,7 @@
   @include('pages.sections.header')
 
 
-  @if($number_of_played_questions > 2)
+  @if($number_of_played_questions > 1)
     <div class="modal modal-image-container col-lg-12">
           <div class="modal-image-holder">
             <div class="close-icon-holder" id="close-icon-holder">
