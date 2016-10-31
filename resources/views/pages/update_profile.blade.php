@@ -43,11 +43,11 @@
               <div class="col-lg-12">
                 <input type="text" name="username" value="{{ Auth::user()->username }}" placeholder="Enter Your Desired Username" />
               </div>
-<!-- 
+
               <div class="col-lg-12">
                 <span class="select-title">Select a Profile Picture</span>
-                <input class="select-file" type="file" name="file"  placeholder="Image" />
-              </div> -->
+                <input class="select-file" type="file" name="image"  placeholder="Image" />
+              </div>
 
               <div class="col-lg-12">
 
