@@ -20,9 +20,9 @@
     <div class="categories-navigation">
       <h2>Play With</h2>
       <div class="category-holder">
-        <div class="male-category-navigation category"><a class="btn button button-males  active" href="male-users-page.html">Guys</a></div>
+        <div class="male-category-navigation category"><a class="btn button button-males  active" href="#">Guys</a></div>
           <p>Or</p>
-        <div class="females-category-navigation category"><a class="btn button button-females" href="female-users-page.html">Girls</a></div>  
+        <div class="females-category-navigation category"><a class="btn button button-females" href="#">Girls</a></div>  
       </div>
       </div>
       

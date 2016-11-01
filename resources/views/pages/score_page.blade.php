@@ -14,7 +14,7 @@
               <div class="images-holder-div images-holder-right col-xs-6"><img src="{{ asset('asset/images/girl-2-pictures.png') }}"></div>
             </div>
             <div>
-              <p>You both have a thing or two in common! Would you like to meet?</p>
+              <!-- <p>You both have a thing or two in common! Would you like to meet?</p> -->
               <div id="meet-button-holder">
                 <!-- <button class="button meet-button">Meet</button> -->
                 <a href="{{ Url('/') }}" class="button back-button">Go Back</a>

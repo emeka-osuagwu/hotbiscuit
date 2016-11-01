@@ -45,7 +45,6 @@
             <div class="option">
               <h3>B: {{ $question->option_2 }}</h3>
             </div>  
-              <h3>{{ $question->id }}</h3>
           </div>
           
         </div>
