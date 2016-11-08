@@ -5,7 +5,7 @@
   @include('pages.sections.header')
 
 
-  @if($number_of_played_questions > 1)
+<!--   @if($number_of_played_questions > 1)
     <div class="modal modal-image-container col-lg-12">
           <div class="modal-image-holder">
             <div class="close-icon-holder" id="close-icon-holder">
@@ -16,6 +16,10 @@
           </div>
     </div>
   @endif
+
+ -->
+
+
 
   <section class="col-lg-12 test-section-1 section-1 container" id="home-container">
       <div class="section-1__content__card center card test-card">

@@ -14,6 +14,17 @@
       
     </div>
   </nav>
+<!--     <div class="modal modal-image-container col-lg-12">
+          <div class="modal-image-holder">
+            <div class="close-icon-holder" id="close-icon-holder">
+            </div>
+            <div class="modal-image">
+              <img src="{{ asset('asset/images/my_nice.jpg') }}">
+            </div>
+          </div>
+    </div> -->
+
+
 
 
   <div class="modal-menu-holder hide-modal">
