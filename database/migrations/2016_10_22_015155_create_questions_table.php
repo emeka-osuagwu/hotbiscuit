@@ -17,8 +17,8 @@ class CreateQuestionsTable extends Migration
             $table->string('question');
             $table->string('option_1');
             $table->string('option_2');
-            $table->integer('point');
-            $table->integer('personality_level');
+            $table->integer('option_1_point');
+            $table->integer('option_2_point');
             $table->timestamps();
         });
     }

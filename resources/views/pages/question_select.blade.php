@@ -51,13 +51,13 @@
         <div class="button-select">
           <form action="{{ Url('question/answer') }}" method="post">
             <input type="text" hidden="true" name="question_id"  value="{{ $question->id }}">
-            <input type="text" hidden="true" name="point"  value="{{ $question->point }}">
+            <input type="text" hidden="true" name="point"  value="{{ $question->option_1_point }}">
             <button type="submit" class="btn option-a">A</button>
           </form>          
 
           <form action="{{ Url('question/answer') }}" method="post">
             <input type="text" hidden="true" name="question_id"  value="{{ $question->id }}">
-            <input type="text" hidden="true" name="point"  value="{{ $question->point }}">
+            <input type="text" hidden="true" name="point"  value="{{ $question->option_2_point }}">
             <button type="submit" class="btn option-b">B</button>
           </form>
         </div>

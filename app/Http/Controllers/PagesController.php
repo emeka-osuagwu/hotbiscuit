@@ -151,12 +151,13 @@ class PagesController extends Controller
 
 	public function postUserAddQuestion(Request $request)
 	{
-		return $request->all();
 		$question = [
-			"answer" 		=> trim($request['answer']),
-			"user_id" 		=> Auth::user()->id,
-			"question_id" 	=> (int) $request['question_id']
+			"user_id" 				=> Auth::user()->id,
+			"question_id" 			=> (int) $request['question_id'],
+			"personality_level" 	=> (int) Auth::user()->personality_level + (int) $request['point'],
 		];
+
+		return $question;
 
 		$user_questions =  UserQuestion::create($question);
 
