@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username', 
         'password',
         'questions', 
+        'personality_level', 
     ];
 
     /**
