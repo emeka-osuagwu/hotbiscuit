@@ -137,7 +137,7 @@ class PagesController extends Controller
 		
 		$can_add = true;
 
-		if (collect($user_questions)->count() == 15) {
+		if (collect($user_questions)->count() == 10) {
 			$can_add = false;
 			$this->changeQuestonStatus();
 		}
@@ -153,11 +153,12 @@ class PagesController extends Controller
 	{
 		$question = [
 			"user_id" 				=> Auth::user()->id,
-			"question_id" 			=> (int) $request['question_id'],
-			"personality_level" 	=> (int) Auth::user()->personality_level + (int) $request['point'],
+			"question_id" 			=> (int) $request['question_id']
 		];
 
-		return $question;
+		$user = User::find(Auth::user()->id);
+		$user->personality_level = (int) $user->personality_level + $request['point']; 
+		$user->save();
 
 		$user_questions =  UserQuestion::create($question);
 
@@ -386,10 +387,11 @@ class PagesController extends Controller
 			$reader->each(function($sheet) {
 				
 				$data = [
-					"point" 	=> rand(0, 10),
-					"question" 	=> trim($sheet->question),
-					"option_1" 	=> trim($sheet->option_1),
-					"option_2" 	=> trim($sheet->option_2),
+					"question" 			=> trim($sheet->question),
+					"option_1" 			=> trim($sheet->option_1),
+					"option_2" 			=> trim($sheet->option_2),
+					"option_1_point" 	=> rand(0, 10),
+					"option_2_point" 	=> rand(0, 10),
 				];
 
 				Question::create($data);
