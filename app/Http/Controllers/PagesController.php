@@ -384,9 +384,10 @@ class PagesController extends Controller
 			$reader->each(function($sheet) {
 				
 				$data = [
-					"question" => trim($sheet->question),
-					"option_1" => trim($sheet->option_1),
-					"option_2" => trim($sheet->option_2)
+					"point" 	=> rand(0, 10),
+					"question" 	=> trim($sheet->question),
+					"option_1" 	=> trim($sheet->option_1),
+					"option_2" 	=> trim($sheet->option_2),
 				];
 
 				Question::create($data);
