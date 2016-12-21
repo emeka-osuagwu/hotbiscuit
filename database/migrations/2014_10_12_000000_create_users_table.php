@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             
             $table->integer('profile_status')->default(0);
             $table->integer('question_status')->default(0);
-            $table->integer('personality_level');
+            $table->integer('personality_level')->nullable();
             
             $table->rememberToken();
             $table->timestamps();
