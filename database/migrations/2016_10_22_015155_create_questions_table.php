@@ -13,12 +13,12 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('question');
-            $table->string('option_1');
-            $table->string('option_2');
-            $table->integer('option_1_point');
-            $table->integer('option_2_point');
+            $table->increments('id')->nullable();
+            $table->string('question')->nullable();
+            $table->string('option_1')->nullable();
+            $table->string('option_2')->nullable();
+            $table->integer('option_1_point')->nullable();
+            $table->integer('option_2_point')->nullable();
             $table->timestamps();
         });
     }
