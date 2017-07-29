@@ -14,6 +14,17 @@
       
     </div>
   </nav>
+<!--     <div class="modal modal-image-container col-lg-12">
+          <div class="modal-image-holder">
+            <div class="close-icon-holder" id="close-icon-holder">
+            </div>
+            <div class="modal-image">
+              <img src="{{ asset('asset/images/my_nice.jpg') }}">
+            </div>
+          </div>
+    </div> -->
+
+
 
 
   <div class="modal-menu-holder hide-modal">
@@ -23,11 +34,11 @@
       </div>
       <div class="menu-links">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="registration.html">Registration Page</a></li>
-          <li><a href="test-page.html">test-page</a></li>
-          <li><a href="male-users-page.html">male-users-page</a></li>
-          <li><a href="female-users-page.html">female-users-page</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Registration Page</a></li>
+          <li><a href="/">test-page</a></li>
+          <li><a href="/">male-users-page</a></li>
+          <li><a href="/">female-users-page</a></li>
         </ul>
     </div>
     </div>

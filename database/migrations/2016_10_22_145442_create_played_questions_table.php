@@ -16,10 +16,10 @@ class CreatePlayedQuestionsTable extends Migration
             $table->increments('id');
             
             $table->integer('status')->default(0);
-            $table->integer('owner_id');
-            $table->integer('player_id');
-            $table->integer('question_id');
-            $table->string('answer');
+            $table->integer('owner_id')->nullable();
+            $table->integer('player_id')->nullable();
+            $table->integer('question_id')->nullable();
+            $table->string('answer')->nullable();
             
             $table->timestamps();
         });

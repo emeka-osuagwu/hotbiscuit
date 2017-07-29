@@ -55,24 +55,24 @@
               </div>
               <div class="col-lg-6">
                 <span class="select-title">Select Your Sex</span>
-                <select class="select-box" name="sex" required="true">
+                <select class="select-box" name="sex" required>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>  
               </div>
               <div class="col-lg-6">
                 <span class="select-title">Select Your Location</span>
-                <select class="select-box" name="location" required="true">
+                <select class="select-box" name="location" required>
                   <option value="lagos">lagos</option>
                   <option value="Uyo">Uyo</option>
                 </select>   
               </div>
               <div class="col-lg-12">
-                <input type="number"  name="phone"  value="{{ Auth::user()->phone }}" placeholder="Enter Your Phone Number" />
+                <input type="number"  required name="phone"  value="{{ Auth::user()->phone }}" placeholder="Enter Your Phone Number" />
               </div>
               
               <div class="col-lg-12">
-                <Textarea name="about"  value="{{ Auth::user()->about }}" placeholder="Tell Us About Yourself"></Textarea>
+                <Textarea name="about"  required value="{{ Auth::user()->about }}" placeholder="Tell Us About Yourself"></Textarea>
               </div>
               
               <div class="col-lg-12">
