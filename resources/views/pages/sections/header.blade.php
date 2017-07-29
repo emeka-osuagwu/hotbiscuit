@@ -34,11 +34,11 @@
       </div>
       <div class="menu-links">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="registration.html">Registration Page</a></li>
-          <li><a href="test-page.html">test-page</a></li>
-          <li><a href="male-users-page.html">male-users-page</a></li>
-          <li><a href="female-users-page.html">female-users-page</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Registration Page</a></li>
+          <li><a href="/">test-page</a></li>
+          <li><a href="/">male-users-page</a></li>
+          <li><a href="/">female-users-page</a></li>
         </ul>
     </div>
     </div>
